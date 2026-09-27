@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Generate and download QR codes from text or URLs."
+    >
+
+    <title>QR Code Generator</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="logo">
+                QR
+            </div>
+
+            <h1>
+                QR Code Generator
+            </h1>
+
+            <p class="description">
+                Generate a QR code from any text or URL.
+            </p>
+
+        </header>
+
+
+        <!-- Main Form -->
+
+        <section class="generator-section">
+
+            <!-- Text / URL -->
+
+            <div class="input-group">
+
+                <label for="qrInput">
+                    Text or URL
+                </label>
+
+                <input
+                    type="text"
+                    id="qrInput"
+                    placeholder="https://example.com"
+                    autocomplete="off"
+                    maxlength="2000"
+                >
+
+                <small>
+                    Enter any text, website URL, phone number, or other information.
+                </small>
+
+            </div>
+
+
+            <!-- QR Size -->
+
+            <div class="option-group">
+
+                <label for="qrSize">
+                    QR Code Size
+                </label>
+
+                <select id="qrSize">
+
+                    <option value="200">
+                        Small — 200 × 200
+                    </option>
+
+                    <option
+                        value="250"
+                        selected
+                    >
+                        Medium — 250 × 250
+                    </option>
+
+                    <option value="300">
+                        Large — 300 × 300
+                    </option>
+
+                    <option value="400">
+                        Extra Large — 400 × 400
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Colors -->
+
+            <div class="color-group">
+
+                <div class="color-option">
+
+                    <label for="qrColor">
+                        QR Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="qrColor"
+                        value="#000000"
+                    >
+
+                </div>
+
+
+                <div class="color-option">
+
+                    <label for="bgColor">
+                        Background Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="bgColor"
+                        value="#ffffff"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="button-group">
+
+                <button
+                    id="generateBtn"
+                    type="button"
+                    class="primary-btn"
+                >
+                    Generate QR Code
+                </button>
+
+
+                <button
+                    id="clearBtn"
+                    type="button"
+                    class="clear-btn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QR Result -->
+
+        <section
+            id="qrSection"
+            class="qr-section"
+            aria-live="polite"
+        >
+
+            <h2>
+                Generated QR Code
+            </h2>
+
+
+            <div
+                id="qrContainer"
+                class="qr-container"
+            >
+            </div>
+
+
+            <!-- Download / Copy -->
+
+            <div class="result-buttons">
+
+                <button
+                    id="downloadBtn"
+                    type="button"
+                    class="download-btn"
+                >
+                    Download PNG
+                </button>
+
+
+                <button
+                    id="copyBtn"
+                    type="button"
+                    class="copy-btn"
+                >
+                    Copy QR
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Status -->
+
+        <p
+            id="statusMessage"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+        >
+        </p>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                Simple • Fast • Free
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- QR Code Library -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    ></script>
+
+
+    <!-- Our JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
